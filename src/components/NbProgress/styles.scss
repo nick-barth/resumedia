@@ -1,0 +1,25 @@
+.NbProgress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  display: block;
+}
+
+.NbProgress[value]::-webkit-progress-bar {
+  background-color: var(--nb-color-gray-light);
+}
+
+.NbProgress::-webkit-progress-value {
+  background-color: var(--nb-primary-color);
+  transition: width 0.5s;
+}
+
+.NbProgress.NbProgress--error::-webkit-progress-value {
+  background-color: var(--nb-color-error);
+  transition: width 0.5s;
+}
+
+.NbProgress.NbProgress--success::-webkit-progress-value {
+  background-color: var(--nb-color-success);
+  transition: width 0.5s;
+}

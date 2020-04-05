@@ -1,0 +1,21 @@
+.NbDivider {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  align-items: center;
+}
+
+.NbDivider__text {
+  padding: 0 10px;
+  color: var(--nb-color-line);
+  line-height: 1;
+  font-size: 14px;
+}
+
+.NbDivider__border {
+  width: 100%;
+  border-top: 1px solid var(--nb-color-line);
+  border-bottom: 0;
+  margin: 0;
+  height: 0;
+}

@@ -1,0 +1,51 @@
+.Wizard {
+}
+
+.Wizard__sidebar {
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid rgb(234, 234, 234);
+  border-radius: 8px 0px 0px;
+  margin-bottom: 20px;
+  display: flex;
+  position: relative;
+}
+
+.Wizard__logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+
+.Wizard__logo__src {
+  height: 20px;
+}
+
+.Wizard__steps {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.Wizard__content {
+  max-width: 600px;
+  margin: auto;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: all ease-in-out 500ms;
+}
+.fade-exit {
+  opacity: 0;
+}
+.fade-exit-active {
+  opacity: 1;
+  transition: all ease-in-out 500ms;
+}

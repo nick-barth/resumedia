@@ -1,0 +1,19 @@
+.step-two {
+}
+
+.step-two__button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 200px;
+}
+
+.step-two__edu-container {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--nb-color-line);
+}
+
+.step-two__combined-line {
+  display: flex;
+  justify-content: space-between;
+}

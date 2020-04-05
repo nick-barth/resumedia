@@ -1,0 +1,15 @@
+.NbCheckout__strip_input {
+  flex: 1;
+  outline: 0px;
+  padding: 10px;
+  width: 100%;
+  border-radius: var(--nb-border-radius);
+  border: 1px solid var(--nb-color-gray-light);
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: all 0.25s ease-in-out;
+  min-height: 44px;
+  resize: none;
+  margin-bottom: 20px;
+  background: white;
+}

@@ -1,0 +1,48 @@
+.NbModal {
+  visibility: hidden;
+  margin: 20px auto;
+  background-color: #e3e8ee;
+  padding: 20px;
+  max-width: 800px;
+  position: relative;
+  opacity: 0;
+  transition: 0.3s all ease-in-out;
+  transition-delay: 0.1s;
+  transform: scale(0.6);
+}
+
+.NbModal__bg {
+  visibility: hidden;
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0); /* Black w/ opacity */
+  transition: 0.3s all ease-in-out;
+}
+
+.NbModal_bg--active {
+  visibility: visible;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.NbModal--active {
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.NbModal__close {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+}
+
+.NbModal__actions {
+  display: flex;
+  flex-direction: row-reverse;
+}

@@ -1,0 +1,30 @@
+.NbListItem {
+  padding: 20px;
+  border: 1px solid white;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.NbListItem__actions {
+  display: flex;
+}
+
+.NbListItem__action-container {
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.NbListItem__action-container:hover {
+  color: var(--nb-primary-color);
+}
+
+.NbListItem__photo {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 25px;
+}

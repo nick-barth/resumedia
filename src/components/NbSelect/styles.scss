@@ -1,0 +1,59 @@
+.NbSelect {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.NbSelect__input {
+  flex: 1;
+  outline: 0px;
+  height: 100%;
+  padding: 0 10px;
+  width: 100%;
+  border-radius: var(-nb-border-radius);
+  border: 1px solid white;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: all 0.5s;
+  height: 44px;
+  -webkit-appearance: none;
+  background-color: white;
+}
+
+.NbSelect__input:focus {
+  border: 1px solid var(-nb-primary-color);
+}
+
+.NbSelect__arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(-nb-color-gray-dark);
+  height: 15px;
+}
+
+.NbSelect__placeholder {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  color: var(-nb-color-gray-dark);
+}
+
+.NbSelect__input-container {
+  position: relative;
+}
+
+.NbSelect__input::placeholder {
+  color: var(-nb-color-gray-dark);
+  font-size: 16px;
+  opacity: 1;
+}
+
+.NbSelect--error .NbSelect__input {
+  border: 1px solid var(-nb-color-error);
+}
+
+.NbSelect--disabled .NbSelect__input {
+  cursor: not-allowed;
+}

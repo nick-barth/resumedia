@@ -1,0 +1,76 @@
+.NbInput {
+  margin-bottom: 20px;
+}
+
+.NbInput__input {
+  flex: 1;
+  outline: 0px;
+  padding: 10px;
+  width: 100%;
+  border-radius: var(--nb-border-radius);
+  box-sizing: border-box;
+  border: 1px solid white;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  min-height: 44px;
+  resize: none;
+  transition: 0.3s ease-in-out all;
+}
+
+.NbInput__container {
+  display: flex;
+}
+
+.NbInput__prepend {
+  flex: 1 1;
+  flex-grow: 0;
+  outline: 0px;
+  padding: 10px;
+  width: 100%;
+  background-color: var(--nb-color-gray-light);
+  border-radius: var(--nb-border-radius) 0 0 var(--nb-border-radius);
+  border: 1px solid var(--nb-color-gray-dark);
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: all 0.25s ease-in-out;
+  min-height: 44px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.NbInput__prepend ~ .NbInput__input {
+  border-radius: 0 var(--nb-border-radius) var(--nb-border-radius) 0;
+}
+
+.NbInput__input:focus {
+  border: 1px solid var(--nb-primary-color);
+}
+
+.NbInput__input::placeholder {
+  color: var(--nb-color-gray-dark);
+  font-size: 16px;
+  opacity: 1;
+}
+
+.NbInput.NbInput--error .NbInput__input {
+  border: 1px solid var(--nb-color-error);
+}
+
+.NbInput.NbInput--disabled .NbInput__input {
+  cursor: not-allowed;
+}
+
+.NbInput__input--error {
+  border-color: var(--nb-color-error);
+}
+
+.NbInput__labels {
+  display: flex;
+}
+
+.NbInput__error {
+  font-size: 14px;
+  color: var(--nb-color-error);
+  display: inline-flex;
+}

@@ -1,0 +1,13 @@
+.NbFormSubmit {
+  display: flex;
+  align-content: middle;
+  align-items: center;
+}
+
+.NbFormSubmit__error {
+  color: var(--nb-color-error);
+  font-size: 14px;
+  display: inline;
+  margin-left: 8px;
+  transition: 0.5s ease-in-out all;
+}

@@ -1,0 +1,80 @@
+.NbButton {
+  display: inline-flex;
+  margin-bottom: 0;
+  text-align: center;
+  justify-content: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  border-radius: var(--nb-border-radius);
+  width: 140px;
+  padding: 0 32px;
+  height: 44px;
+  font-size: 16px;
+  position: relative;
+  letter-spacing: 0.5px;
+  align-items: center;
+  transition: box-shadow 0.1s ease-in-out;
+  box-shadow: 0px 0px 0px 0px rgba(209, 219, 229, 0.26);
+  text-decoration: none; /* no underline */
+}
+
+.NbButton:focus {
+  outline: 0;
+  box-shadow: 0px 0px 0px 3px rgba(209, 219, 229, 1);
+}
+
+.NbButton__icon {
+  position: relative;
+  height: 18px;
+}
+
+.NbButton__icon--pre {
+  margin-right: 10px;
+}
+.NbButton__icon--post {
+  margin-left: 10px;
+}
+
+.NbButton--primary {
+  color: #fff;
+  background: var(--nb-primary-color);
+  border-color: var(--nb-primary-color);
+}
+
+.NbButton--primary:hover {
+  background: var(--nb-primary-hover);
+  border-color: var(--nb-primary-hover);
+}
+
+.NbButton--primary.NbButton--disabled {
+  cursor: not-allowed;
+  color: white;
+  background-color: var(--nb-color-gray-dark);
+  border: 1px solid var(--nb-color-gray-dark);
+}
+
+.NbButton--primary.NbButton--disabled:hover {
+  background-color: var(--nb-color-gray-dark);
+  border: 1px solid var(--nb-color-gray-dark);
+}
+
+.NbButton--secondary {
+  color: var(--nb-primary-color);
+  border-color: var(--nb-primary-color);
+  background-color: transparent;
+}
+.NbButton--secondary:hover {
+  color: #fff;
+  border-color: var(--nb-primary-hover);
+}
+
+.NbButton--block {
+  width: 100%;
+}
+
+.NbButton--is-loading {
+  opacity: 0;
+}
