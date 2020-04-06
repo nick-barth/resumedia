@@ -37,6 +37,7 @@ function StepThree() {
                           <Field
                             name={`experience.${index}.company`}
                             label="Company"
+                            autoFocus
                             component={NbInput}
                             handleChange={arrayHelpers.form.handleChange}
                           />

@@ -34,7 +34,7 @@ const STEPS = [
 
 export const WizardContext = createContext({
   data: {},
-  setData: () => console.log("wow"),
+  setData: () => console.log("pls hire me"),
 });
 
 function Wizard({ location }) {

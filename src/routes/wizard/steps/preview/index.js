@@ -11,7 +11,6 @@ import "./styles.scss";
 function Preview() {
   const { data, setData } = useContext(WizardContext);
 
-  console.log("State", data);
   let history = useHistory();
   return (
     <NbCard className="wow" title={"Preview"}>
