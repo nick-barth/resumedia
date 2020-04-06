@@ -28,6 +28,70 @@
   max-width: 400px;
   width: 100%;
   margin: 20px auto;
+  padding: 0;
+}
+
+.Wizard__step-item {
+  width: 100%;
+  list-style: none;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid var(--nb-color-gray-dark);
+  font-size: 12px;
+  transition: all 0.6s ease-in-out;
+}
+
+.Wizard__step-item--current {
+  font-weight: 800;
+}
+
+.Wizard__step-item:before {
+  content: "";
+  background: var(--nb-color-gray-dark);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 25%;
+  width: 1px;
+}
+
+.Wizard__step-item:after {
+  content: "";
+  background: var(--nb-color-gray-dark);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 25%;
+  width: 1px;
+}
+
+.Wizard__step-item:first-child:before {
+  content: "";
+  height: 0;
+}
+
+.Wizard__step-item:last-child:after {
+  content: "";
+  height: 0;
+}
+
+.Wizard__progress {
+  background-color: var(--nb-primary-color);
+  height: 4px;
+  position: absolute;
+  transition: 0.3s linear all;
+  width: 0%;
+  bottom: -4px;
+  position: absolute;
+}
+
+.Wizard__progress--current {
+  width: 50%;
+  transition-delay: 300ms;
+}
+
+.Wizard__progress--complete {
+  width: 100%;
 }
 
 .Wizard__content {

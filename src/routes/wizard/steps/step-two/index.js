@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useHistory } from "react-router-dom";
 import NbInput from "../../../../components/NbInput";
 import NbCard from "../../../../components/NbCard";
 import NbButton from "../../../../components/NbButton";
@@ -6,14 +7,17 @@ import { Formik, Form, Field, FieldArray } from "formik";
 import { Trash2 } from "react-feather";
 import "./styles.scss";
 
-function StepOne() {
+function StepTwo() {
+  let history = useHistory();
   return (
     <Formik
-      initialValues={{ educations: [{ school: "Sata", year: "" }] }}
+      initialValues={{
+        educations: [{ school: "", start: "", end: "", study: "" }],
+      }}
       onSubmit={(values) =>
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-        }, 500)
+          history.push("/experience");
+        }, 400)
       }
       render={({ values }) => (
         <NbCard title="Education">
@@ -29,6 +33,7 @@ function StepOne() {
                           <Field
                             name={`educations.${index}.school`}
                             label="School"
+                            autoFocus
                             component={NbInput}
                             handleChange={arrayHelpers.form.handleChange}
                           />
@@ -62,9 +67,9 @@ function StepOne() {
                       );
                     })
                   ) : (
-                    <button type="button" onClick={() => arrayHelpers.push("")}>
-                      Add a edu
-                    </button>
+                    <div className="step-two__ug-oh">
+                      {"Higher education isn't for everyone!"}
+                    </div>
                   )}
                   <div className="step-two__button-container">
                     <NbButton
@@ -85,4 +90,4 @@ function StepOne() {
   );
 }
 
-export default StepOne;
+export default StepTwo;

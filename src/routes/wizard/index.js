@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 //Logo
@@ -12,6 +12,7 @@ import NbButton from "../../components/NbButton";
 import StepOne from "./steps/step-one";
 import StepTwo from "./steps/step-two";
 import StepThree from "./steps/step-three";
+import Preview from "./steps/preview";
 
 import "./index.scss";
 
@@ -43,13 +44,33 @@ function Wizard({ location }) {
           <img className="Wizard__logo__src" src={Logo} alt="Resumedia" />
         </div>
         <ol className="Wizard__steps">
-          <li>Step one</li>
-          <li>Step two</li>
-          <li>Step three</li>
+          {STEPS.map((step, index) => {
+            const current = STEPS.findIndex((s) =>
+              location.pathname.includes(s.url)
+            );
+            console.log(current);
+            return (
+              <li
+                key={step.url}
+                className={`Wizard__step-item  ${
+                  index === current && "Wizard__step-item--current"
+                }`}
+              >
+                {step.name}
+                <div
+                  className={`Wizard__progress ${
+                    (index < current || current == -1) &&
+                    "Wizard__progress--complete"
+                  }
+                ${index === current && "Wizard__progress--current"}`}
+                ></div>
+              </li>
+            );
+          })}
         </ol>
       </div>
       <div className="Wizard__content">
-        <TransitionGroup unmountOnExit>
+        <TransitionGroup>
           <CSSTransition
             key={location.key}
             classNames="fade"
@@ -64,11 +85,16 @@ function Wizard({ location }) {
                 return (
                   <Route
                     path={path + route.url}
-                    key={route.key}
+                    key={route.url}
                     component={route.Component}
                   />
                 );
               })}
+              <Route
+                path={path + "preview"}
+                key={"preview"}
+                component={Preview}
+              />
             </Switch>
           </CSSTransition>
         </TransitionGroup>

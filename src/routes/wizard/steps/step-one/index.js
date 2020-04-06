@@ -87,7 +87,11 @@ function StepOne() {
               handleChange={handleChange}
             />
             <div className="step-one__button-container">
-              <NbButton handleClick={handleSubmit} isLoading={isSubmitting} />
+              <NbButton
+                text="Next"
+                handleClick={handleSubmit}
+                isLoading={isSubmitting}
+              />
             </div>
           </form>
         </NbCard>
