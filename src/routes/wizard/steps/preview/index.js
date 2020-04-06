@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
 
 import NbCard from "../../../../components/NbCard";
 import NbConfetti from "../../../../components/NbConfetti";
@@ -11,7 +10,6 @@ import "./styles.scss";
 function Preview() {
   const { data, setData } = useContext(WizardContext);
 
-  let history = useHistory();
   return (
     <NbCard className="wow" title={"Preview"}>
       <div>
