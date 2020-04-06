@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import NbInput from "../../../../components/NbInput";
 import NbCard from "../../../../components/NbCard";
 import NbButton from "../../../../components/NbButton";
@@ -7,15 +7,19 @@ import { useHistory } from "react-router-dom";
 import { Trash2 } from "react-feather";
 import "./styles.scss";
 
+import { WizardContext } from "../../../wizard";
+
 function StepThree() {
+  const { data, setData } = useContext(WizardContext);
   let history = useHistory();
   return (
     <Formik
       initialValues={{
-        experience: [{ company: "", start: "", end: "", role: "" }],
+        experience: data.experience,
       }}
       onSubmit={(values) =>
         setTimeout(() => {
+          setData("experience", values.experience);
           history.push("/preview");
         }, 400)
       }

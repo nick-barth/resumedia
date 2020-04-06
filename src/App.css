@@ -11,7 +11,10 @@
   --nb-color-line: #0e60be;
   --nb-border-radius: 4px;
 }
-
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
 * {
   box-sizing: border-box;
 }

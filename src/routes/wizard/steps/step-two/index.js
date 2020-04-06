@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import NbInput from "../../../../components/NbInput";
 import NbCard from "../../../../components/NbCard";
@@ -7,15 +7,19 @@ import { Formik, Form, Field, FieldArray } from "formik";
 import { Trash2 } from "react-feather";
 import "./styles.scss";
 
+import { WizardContext } from "../../../wizard";
+
 function StepTwo() {
   let history = useHistory();
+  const { data, setData } = useContext(WizardContext);
   return (
     <Formik
       initialValues={{
-        educations: [{ school: "", start: "", end: "", study: "" }],
+        educations: data.education,
       }}
       onSubmit={(values) =>
         setTimeout(() => {
+          setData("education", values.educations);
           history.push("/experience");
         }, 400)
       }
@@ -78,7 +82,7 @@ function StepTwo() {
                       variant="secondary"
                       handleClick={() => arrayHelpers.insert(0, "")} // insert an empty string at a position
                     ></NbButton>
-                    <NbButton type="submit" text={"Next"}></NbButton>
+                    <NbButton type="submit" text={"Save"}></NbButton>
                   </div>
                 </div>
               )}

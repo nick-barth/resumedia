@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Formik } from "formik";
 import NbInput from "../../../../components/NbInput";
 import NbCard from "../../../../components/NbCard";
 import NbButton from "../../../../components/NbButton";
 
+import { WizardContext } from "../../../wizard";
 import "./styles.scss";
 
 function StepOne() {
+  const { data, setData } = useContext(WizardContext);
   let history = useHistory();
   return (
     <Formik
-      initialValues={{ first_name: "", last_name: "", email: "", address: "" }}
+      initialValues={data.basic}
       validate={(values) => {
         const errors = {};
 
@@ -38,6 +40,7 @@ function StepOne() {
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
+          setData("basic", values);
           history.push("/education");
         }, 400);
       }}
@@ -88,7 +91,7 @@ function StepOne() {
             />
             <div className="step-one__button-container">
               <NbButton
-                text="Next"
+                text="Save"
                 handleClick={handleSubmit}
                 isLoading={isSubmitting}
               />
