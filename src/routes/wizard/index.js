@@ -71,7 +71,7 @@ function Wizard({ location }) {
                   <Link to={step.url}>{step.name}</Link>
                   <div
                     className={`Wizard__progress ${
-                      (index < current || current == -1) &&
+                      (index < current || current === -1) &&
                       "Wizard__progress--complete"
                     }
                 ${index === current && "Wizard__progress--current"}`}
